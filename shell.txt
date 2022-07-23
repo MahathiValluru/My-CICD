@@ -1,0 +1,22 @@
+#! \bin\bash
+
+copy_file() {
+   s1=$(ls "$a" | wc -l)
+   echo " number of files in source directory are "$s1" "
+   s2=$(cp -vr "$a"/* "$b")
+   echo " copying progress is "$s2" "
+   s3=$(ls "$b" | wc -l)
+   s5=$(("$s3"-"$s4"))
+   echo " Total number of Files in Destination Directory after Copy "$s3" "
+   echo " Actual Number of Files Copied From Source to Destination is "$s5" "
+   s6=$(ls "$b")
+echo "List of Copied Files are "$s6" "
+   }
+echo " enter the source file path "
+read a
+echo " enter the destination file path "
+read b
+s4=$(ls "$b" | wc -l)
+echo " Number of files in Destion path before Copy "$s4" "
+val=$(copy_file)
+echo " the output is "$val" "
